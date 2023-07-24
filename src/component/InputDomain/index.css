@@ -1,0 +1,23 @@
+.input-domain-wrapper {
+  position: relative;
+}
+
+.input-domain-error {
+  position: absolute;
+  padding: 2px 8px;
+  border-radius: 50%;
+  background: red;
+  top: 30px;
+  right: 12px;
+  color: #fff;
+}
+
+.input-domain-oke {
+  position: absolute;
+  padding: 2px 8px;
+  border-radius: 50%;
+  background: green;
+  top: 30px;
+  right: 12px;
+  color: #fff;
+}

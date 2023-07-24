@@ -1,0 +1,14 @@
+.current-domain-wrapper {
+  margin: 12px 0;
+}
+
+.current-domain-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.current-domain-name {
+  font-size: 13px;
+  margin-left: 22px;
+  color: blue;
+}

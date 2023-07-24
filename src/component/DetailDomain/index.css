@@ -1,0 +1,59 @@
+.detail-domain-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.detail-domain-name {
+  font-size: 13px;
+  margin-left: 22px;
+}
+.detail-domain-ipkiot {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.detail-domain-oke {
+  padding: 2px 8px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background: green;
+  top: 30px;
+  right: 12px;
+  color: #fff;
+}
+
+.detail-domain-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4px;
+}
+
+.detail-domain-td {
+  padding: 8px;
+  border: 1px solid #000;
+}
+
+.detail-domain-td-sec {
+  padding: 8px;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-domain-notice {
+  margin-top: 12px;
+  padding: 8px;
+  background-color: #fafab3;
+  border: 2px solid #ed9999;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.detail-domain-seemore {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
