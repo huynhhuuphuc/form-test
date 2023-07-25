@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { DetailDomainProps } from "../DetailDomain";
-import "./index.css";
 import { DomainFormPage } from "../../constants/detailDomain";
+import "./index.css";
 
 const DetailDomainCountdown: React.FC<DetailDomainProps> = ({
   domainName,
   setFormStep,
 }) => {
-  const initialMinute = 0,
-    initialSeconds = 5;
+  const initialMinute = 9,
+    initialSeconds = 59;
   const [minutes, setMinutes] = useState(initialMinute);
   const [seconds, setSeconds] = useState(initialSeconds);
 
@@ -33,78 +33,47 @@ const DetailDomainCountdown: React.FC<DetailDomainProps> = ({
 
   useEffect(() => {
     if (minutes === 0 && seconds === 0) {
+      sessionStorage.setItem("formStep", DomainFormPage.PAGE_4);
       setFormStep(DomainFormPage.PAGE_4);
     }
   }, [minutes, seconds]);
 
   return (
-    <div className="" style={{ margin: "12px 0" }}>
-      <div
-        style={{
-          padding: "5px 10px",
-          backgroundColor: "#333",
-          color: "#fff",
-          borderRadius: "6px",
-          width: "fit-content",
-          marginLeft: "12px",
-        }}
-      >
+    <div style={{ margin: "12px 0" }}>
+      <div className="detail-domain-countdown">
         <span style={{ display: "block", fontSize: "20px", fontWeight: "600" }}>
           {minutes}:{seconds < 10 ? `0${seconds}` : seconds}s
         </span>
       </div>
       <div style={{ padding: "0 12px" }}>
         <div className="content-middle">
-          <span style={{ fontSize: "13px", fontWeight: "600" }}>Tên miền</span>
+          <span className="detail-domain-title">Tên miền</span>
           <span style={{ fontSize: "13px", marginLeft: "22px" }}>
             {domainName}
           </span>
         </div>
         <div className="content-middle">
-          <span style={{ fontSize: "13px", fontWeight: "600" }}>
-            IP hiện tại
-          </span>
+          <span className="detail-domain-title">IP hiện tại</span>
           <div className="content-countdown-connect">Hệ thống đang kết nối</div>
         </div>
         <div className="">
-          <span
-            style={{ display: "block", fontSize: "13px", fontWeight: "600" }}
-          >
-            IP KiotVietWeb
-          </span>
-          <table
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-              marginTop: "4px",
-            }}
-          >
+          <span className="detail-domain-ip">IP KiotVietWeb</span>
+          <table className="detail-domain-table">
             <tr style={{ backgroundColor: "rgb(219 197 197)" }}>
-              <td style={{ padding: "8px", border: "1px solid #000" }}>Host</td>
-              <td style={{ padding: "8px", border: "1px solid #000" }}>Loại</td>
-              <td style={{ padding: "8px", border: "1px solid #000" }}>
-                Giá trị
-              </td>
+              <td className="detail-domain-td">Host</td>
+              <td className="detail-domain-td">Loại</td>
+              <td className="detail-domain-td">Giá trị</td>
             </tr>
             <tr style={{ backgroundColor: "#fff" }}>
-              <td style={{ padding: "8px", border: "1px solid #000" }}>@</td>
-              <td style={{ padding: "8px", border: "1px solid #000" }}>A</td>
-              <td style={{ padding: "8px", border: "1px solid #000" }}>
+              <td className="detail-domain-td">@</td>
+              <td className="detail-domain-td">A</td>
+              <td className="detail-domain-td">
                 <div>123.456.789</div>
               </td>
             </tr>
           </table>
         </div>
-        <div
-          style={{
-            marginTop: "12px",
-            padding: "8px",
-            backgroundColor: "#fafab3",
-            border: "2px solid #ed9999",
-            borderRadius: "8px",
-            fontSize: "13px",
-          }}
-        >
+        <div className="detail-domain-notice">
           <div>
             Hệ thống đang thiết lập tên miền. Bạn có thể truy cập tên miền sau{" "}
             <span style={{ fontWeight: "700" }}>10phút</span>, nếu không được

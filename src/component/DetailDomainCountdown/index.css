@@ -1,3 +1,37 @@
+.detail-domain-countdown {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 6px;
+  width: fit-content;
+  margin-left: 12px;
+}
+.detail-domain-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+.detail-domain-ip {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+}
+.detail-domain-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4px;
+}
+.detail-domain-td {
+  padding: 8px;
+  border: 1px solid #000;
+}
+.detail-domain-notice {
+  margin-top: 12px;
+  padding: 8px;
+  background-color: #fafab3;
+  border: 2px solid #ed9999;
+  border-radius: 8px;
+  font-size: 13px;
+}
 .content-countdown-connect {
   background-color: orange;
   border-radius: 1000px;

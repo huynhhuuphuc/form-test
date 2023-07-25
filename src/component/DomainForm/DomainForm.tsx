@@ -9,9 +9,14 @@ import InputDomain from "../InputDomain";
 import "./index.css";
 
 const DomainForm: React.FC = () => {
-  const [domainName, setDomainName] = useState<string>("");
+  const [domainName, setDomainName] = useState<string>(
+    sessionStorage.getItem("domainName") || ""
+  );
   const [errorName, setErrorName] = useState<any>();
-  const [formStep, setFormStep] = useState(DomainFormPage.PAGE_1);
+  const [formStep, setFormStep] = useState(
+    sessionStorage.getItem("formStep") || DomainFormPage.PAGE_1
+  );
+  console.log("formStep", formStep);
   const validDomainRegex = /^(?!:\/\/)(?:[-A-Za-z0-9]+\.)+[A-Za-z]{2,6}$/;
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
     null
@@ -42,10 +47,12 @@ const DomainForm: React.FC = () => {
 
   const handleDetailDomain = () => {
     setFormStep(DomainFormPage.PAGE_2);
+    sessionStorage.setItem("formStep", DomainFormPage.PAGE_2);
   };
 
   const handleDetailDomainCountdown = () => {
     setFormStep(DomainFormPage.PAGE_3);
+    sessionStorage.setItem("formStep", DomainFormPage.PAGE_3);
   };
 
   const isEmptyNameDomain = domainName?.length <= 0;
@@ -106,7 +113,10 @@ const DomainForm: React.FC = () => {
                     fontWeight: "600",
                     marginRight: "12px",
                   }}
-                  onClick={() => setFormStep(1)}
+                  onClick={() => {
+                    setFormStep(DomainFormPage.PAGE_1);
+                    sessionStorage.setItem("formStep", DomainFormPage.PAGE_1);
+                  }}
                   size="medium"
                 >
                   Thay đổi tên miền
@@ -141,7 +151,8 @@ const DomainForm: React.FC = () => {
                 >
                   <Button
                     onClick={(e) => {
-                      setFormStep(1);
+                      setFormStep(DomainFormPage.PAGE_1);
+                      sessionStorage.setItem("formStep", DomainFormPage.PAGE_1);
                     }}
                     style={{ padding: "10px", cursor: "pointer" }}
                   >
